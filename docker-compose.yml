@@ -1,0 +1,16 @@
+services:
+  api:
+    build: .
+    depends_on:
+      - db
+    environment:
+      PGHOST: db
+      PGUSER: postgres
+    ports:
+      - "127.0.0.1:3000:3000"
+  db:
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+    image: postgres:14-alpine
+    volumes:
+      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
