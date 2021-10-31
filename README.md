@@ -20,7 +20,7 @@ Alternatively you can use any other HTTP client e.g. curl:
 curl -s localhost:3000/todos
 curl -s -d description="Buy milk" localhost:3000/todos
 curl -s -d complete=true localhost:3000/todos/1
-curl -s -d id=1 -X DELETE localhost:3000/todos/1
+curl -s -d -X DELETE localhost:3000/todos/1
 ```
 
 Notes:
